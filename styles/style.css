@@ -1,0 +1,124 @@
+@font-face {
+    font-family: "Outfit";
+    src: url(../fonts/Outfit-VariableFont_wght.ttf);
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+:root {
+    --clr-Slate-900: hsl(218, 44%, 22%);
+    --clr-Slate-500: hsl(216, 15%, 48%);
+    --clr-Slate-300: hsl(212, 45%, 89%);
+
+    --clr-White: hsl(0, 0%, 100%);
+
+    --ff-text: "Outfit";
+
+    --fs-title: 22px;
+    --fs-text: 15px;
+
+    --fw-title: 700;
+    --fw-text: 400;
+
+    --lh-title: 120%;
+    --lh-text: 140%;
+
+    --ls-title: 0px;
+    --ls-text: 0.2px;
+
+    --spacing-500: 40px;
+    --spacing-300: 24px;
+    --spacing-200: 16px;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: var(--spacing-200) 1fr var(--spacing-200);
+    grid-template-areas:
+        ". component ."
+        "footer footer footer";
+    min-height: 100vh;
+    font-family: var(--ff-text);
+    font-size: var(--fs-text);
+    background-color: var(--clr-Slate-300);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.qrcode__component {
+    grid-area: component;
+    place-self: center;
+    width: min(100%, 320px);
+    padding: var(--spacing-200);
+    margin-block: var(--spacing-200);
+    background-color: var(--clr-White);
+    border-radius: 20px;
+    box-shadow: 0 25px 25px 0 hsla(0, 0%, 0%, 0.0477);
+}
+
+.qrcode__intro {
+    margin-block: var(--spacing-300);
+    margin-inline: var(--spacing-200);
+}
+
+.qrcode__title,
+.qrcode__text {
+    text-align: center;
+}
+
+.qrcode__title {
+    margin-bottom: var(--spacing-200);
+    font-size: var(--fs-title);
+    font-weight: var(--fw-title);
+    line-height: var(--lh-title);
+    letter-spacing: var(--ls-title);
+    color: var(--clr-Slate-900);
+}
+
+.qrcode__text {
+    font-weight: var(--fw-text);
+    line-height: var(--lh-text);
+    letter-spacing: var(--ls-text);
+    color: var(--clr-Slate-500);
+}
+
+/** FOOTER */
+
+.footer {
+    grid-area: footer;
+    margin-top: auto;
+    padding: 2rem 1rem;
+    background-color: var(--clr-Slate-900);
+}
+
+.footer__github,
+.footer__info {
+    text-align: center;
+    color: var(--clr-Slate-500);
+}
+
+.footer__github {
+    margin-bottom: 1rem;
+}
+
+.footer__link {
+    color: var(--clr-Slate-300);
+    text-decoration: none;
+}
+
+.footer__link:hover,
+.footer__link:focus-visible {
+    text-decoration: underline;
+}
